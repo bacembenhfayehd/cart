@@ -31,6 +31,11 @@ function addToCart(id) {
   renederCart();
 }
 
+function removeFromCart (id){
+    panier = panier.filter(p => p.id !== id)
+    renederCart() 
+}
+
 function renederCart() {
   const cartContainer = document.getElementById("cart");
   const totalConatiner = document.getElementById("total");
@@ -47,7 +52,7 @@ function renederCart() {
     <span>${item.name} x ${item.quantity} - ${
         item.price * item.quantity
       }$</span>
-    <button class="btn"> supprimer du panier </button>
+    <button class="btn" onClick="removeFromCart(${item.id})"> supprimer du panier </button>
     `
     )
     .join("");

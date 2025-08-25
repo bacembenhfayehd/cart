@@ -1,6 +1,11 @@
-let tab = [1,15,30,90]
-
-let somme = tab.reduce((item,acc) => item + acc , 0)
+let panier = [{},{},{},{}]
 
 
-console.log(somme)
+function removeFromCart(id){
+    return panier.filter(p => p.id !== id)
+}
+
+
+
+
+
